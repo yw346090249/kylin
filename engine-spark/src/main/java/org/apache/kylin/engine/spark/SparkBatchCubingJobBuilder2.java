@@ -60,6 +60,7 @@ public class SparkBatchCubingJobBuilder2 extends BatchCubingJobBuilder2 {
         StringUtil.appendWithSeparator(jars, findJar("org.apache.hadoop.hbase.HBaseConfiguration")); // hbase-common.jar
         StringUtil.appendWithSeparator(jars, findJar("org.apache.hadoop.hbase.util.ByteStringer")); // hbase-protocol.jar
         StringUtil.appendWithSeparator(jars, findJar("com.yammer.metrics.core.Gauge")); // metrics-core.jar
+        StringUtil.appendWithSeparator(jars, findJar("com.google.common.collect.Maps")); //guava.jar
 
         StringUtil.appendWithSeparator(jars, seg.getConfig().getSparkAdditionalJars());
         sparkExecutable.setJars(jars.toString());
